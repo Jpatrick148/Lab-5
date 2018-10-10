@@ -10,15 +10,20 @@ namespace Lab_5
     {
         static void Main(string[] args)
         {
+            string check;
+            do
+            {
+                Console.WriteLine("Please enter an Integer from 1 to 10");
+                int num = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Please enter an Integer from 1 to 10");
-            int num = int.Parse(Console.ReadLine());
+                long fact = Factorial(num);
 
-            long fact = Factorial(num);
+                Console.WriteLine("The Factorial of {0} is {1}", num, fact);
 
-            Console.WriteLine("The Factorial of {0} is {1}", num, fact);
+                Console.WriteLine("Again? {Y/N}");
+                check = Console.ReadLine().ToLower();
 
-            Console.ReadLine();
+            } while (check == "y");
         }
 
         public static long Factorial(int i)
