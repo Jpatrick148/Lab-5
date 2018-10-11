@@ -13,10 +13,20 @@ namespace Lab_5
             do
             {
                 Console.WriteLine("Please enter an Integer from 1 to 20");
-                long num = long.Parse(Console.ReadLine());
-
-                long fact = Factorial(num);
-
+                long num;
+                while (true)
+                {
+                 num = long.Parse(Console.ReadLine());
+                    if (num <=20)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please enter an Integer from 1 to 20");
+                    }
+                }
+                long fact = Factorial(num);               
                 Console.WriteLine("The Factorial of {0} is {1}", num, fact);
             }
             while (Continue() == true);
@@ -24,11 +34,7 @@ namespace Lab_5
 
         public static long Factorial(long i)
         {
-            if (i == 0)
-            {
-                return 1;
-            }
-            return i * Factorial(i - 1);
+            return i == 0 ? 1 : i * Factorial(i - 1);
         }
 
         public static bool Continue()
